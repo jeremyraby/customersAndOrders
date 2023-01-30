@@ -93,3 +93,12 @@ WHERE
     location LIKE '%New York%' 
 GROUP BY location
 HAVING COUNT(*) >= 3;
+
+-- How many of each type of headphone were sold in February?
+SELECT 
+    Product,
+    COUNT(Product) AS 'Count'
+FROM BIT_DB.FebSales
+WHERE Product LIKE '%Headphones%'
+GROUP BY Product
+ORDER BY COUNT(Product) DESC;
