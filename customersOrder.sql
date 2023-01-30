@@ -83,3 +83,13 @@ WHERE
     LENGTH(orderID) = 6 AND
     orderID != 'Order ID'
 GROUP BY Product;
+
+-- Which locations in New York received at least 3 orders in January, and how many orders did they each receive?
+SELECT 
+    location AS 'Location',
+    COUNT(*) AS 'Number of Orders'
+FROM BIT_DB.JanSales
+WHERE
+    location LIKE '%New York%' 
+GROUP BY location
+HAVING COUNT(*) >= 3;
