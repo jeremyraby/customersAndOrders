@@ -103,3 +103,10 @@ WHERE Product LIKE '%Headphones%'
 GROUP BY Product
 ORDER BY COUNT(Product) DESC;
 
+-- What was the average quantity of products purchased per account in February?/*
+SELECT
+    SUM(FebSales.Quantity) / COUNT(customers.acctnum) AS 'Average Quantity Purchased'
+FROM BIT_DB.FebSales FebSales
+LEFT JOIN BIT_DB.customers customers
+ON FebSales.orderID = customers.order_id
+WHERE LENGTH(orderID )= 6 AND orderID != 'Order ID';
