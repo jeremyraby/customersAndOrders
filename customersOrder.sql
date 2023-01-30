@@ -103,13 +103,3 @@ WHERE Product LIKE '%Headphones%'
 GROUP BY Product
 ORDER BY COUNT(Product) DESC;
 
--- What was the average amount spent per account in February?
-SELECT
-    customers.acctnum AS 'Account Number',
-    ROUND(AVG(FebSales.price), 2) AS 'Average Amount Spent'
-FROM BIT_DB.customers customers
-LEFT JOIN BIT_DB.FebSales FebSales
-ON customers.order_id = FebSales.orderID
-WHERE 
-    FebSales.price IS NOT NULL
-GROUP BY customers.acctnum;
