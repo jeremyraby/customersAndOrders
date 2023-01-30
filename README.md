@@ -17,3 +17,5 @@ This is a collection of assigned queries on a sample database for Charlotte Chaz
 - WHERE
   - Used for cleaning data
 - LIMIT
+- HAVING
+- LIKE
